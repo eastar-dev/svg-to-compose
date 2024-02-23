@@ -1,7 +1,7 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    kotlin("jvm") version "1.5.21"
+    kotlin("jvm") version "1.9.20"
     id("maven-publish")
 }
 
@@ -10,7 +10,7 @@ version = "0.7.0"
 
 repositories {
     mavenCentral()
-    maven("https://maven.google.com")
+    google()
     maven("https://jetbrains.bintray.com/trove4j")
 }
 
@@ -29,7 +29,7 @@ tasks.test {
 }
 
 tasks.withType<KotlinCompile>() {
-    kotlinOptions.jvmTarget = "1.8"
+    kotlinOptions.jvmTarget = "17"
 }
 
 publishing {
